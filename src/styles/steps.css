@@ -1,0 +1,106 @@
+/* =========================================================
+   STEPS CONTAINER
+========================================================= */
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #f1f1f4;
+  background-color: #fff;
+}
+
+/* Linha de progresso (background) */
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  background-color: #e5e7eb;
+  z-index: 0;
+}
+
+/* =========================================================
+   STEP INDIVIDUAL
+========================================================= */
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+}
+
+/* Ícone circular */
+.step svg {
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+/* Texto */
+.step p {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* =========================================================
+   STEP ATIVO / CONCLUÍDO
+========================================================= */
+
+.step.active svg {
+  background-color: #7b5fc9;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.step.active p {
+  color: #7b5fc9;
+  font-weight: 600;
+}
+
+/* =========================================================
+   ANIMAÇÃO SUAVE AO TROCAR STEP
+========================================================= */
+
+.step svg,
+.step p {
+  transition: all 0.25s ease;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 600px) {
+  .steps {
+    padding: 1.2rem 1rem;
+  }
+
+  .steps::before {
+    left: 10%;
+    width: 80%;
+  }
+
+  .step p {
+    font-size: 0.7rem;
+  }
+
+  .step svg {
+    width: 34px;
+    height: 34px;
+  }
+}

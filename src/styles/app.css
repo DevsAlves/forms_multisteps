@@ -1,0 +1,193 @@
+/* =========================================================
+   LAYOUT PRINCIPAL
+========================================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* =========================================================
+   CARD DO FORMULÁRIO
+========================================================= */
+
+.form-container {
+  width: 100%;
+  max-width: 620px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  animation: fadeIn 0.4s ease;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  text-align: center;
+  padding: 2rem 2rem 1.5rem;
+}
+
+.header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.header p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CONTEÚDO INTERNO (STEP)
+========================================================= */
+
+.inputs-container {
+  padding: 2rem;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================================================
+   AÇÕES (BOTÕES)
+========================================================= */
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #f1f1f4;
+  background-color: #fafafa;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actions svg {
+  font-size: 1.2rem;
+}
+
+/* -------- Botão Voltar -------- */
+
+.actions button[type="button"] {
+  background-color: #e5e7eb;
+  color: #444;
+}
+
+.actions button[type="button"]:hover {
+  background-color: #d1d5db;
+}
+
+/* -------- Botão Avançar -------- */
+
+.actions button[type="submit"] {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.actions button[type="submit"]:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* -------- Botão Enviar (último step) -------- */
+
+.actions button:last-child {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.actions button:last-child:hover {
+  background-color: #15803d;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FORMULÁRIO (CAMPOS)
+========================================================= */
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-control label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #444;
+}
+
+.form-control input {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.form-control input::placeholder {
+  color: #aaa;
+}
+
+.form-control input:hover {
+  border-color: #bfc4ce;
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.form-control input:invalid:focus {
+  border-color: #e11d48;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .form-container {
+    border-radius: 8px;
+  }
+
+  .inputs-container {
+    padding: 1.5rem;
+  }
+
+  .actions {
+    padding: 1rem 1.5rem;
+  }
+
+  .form-control input {
+    font-size: 1rem;
+  }
+}

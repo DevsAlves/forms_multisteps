@@ -1,0 +1,107 @@
+/* Container geral */
+.thanks-container {
+  padding: 1rem;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Título principal */
+.thanks-container h2 {
+  font-size: 1.5rem;
+  color: #16a34a;
+  margin-bottom: 0.6rem;
+}
+
+/* Texto */
+.thanks-container p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo do resumo */
+.thanks-container h3 {
+  margin-top: 1.8rem;
+  font-size: 1.1rem;
+  color: #222;
+  border-top: 1px solid #eee;
+  padding-top: 1.2rem;
+}
+
+/* === BLOCO DOS DADOS === */
+
+.review-data {
+  margin-top: 1rem;
+  background-color: #f9fafb;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover leve pra dar vida */
+.review-data:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+/* Label */
+.review-data span {
+  font-weight: 600;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* Ícone de avaliação */
+.review-data svg {
+  font-size: 1.4rem;
+  color: #7b5fc9;
+}
+
+/* Comentário quebra linha corretamente */
+.review-data:last-child {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review-data:last-child span {
+  margin-bottom: 0.3rem;
+}
+
+/* Caixa do comentário */
+.review-data:last-child {
+  background-color: #fdfdfd;
+  border-left: 4px solid #7b5fc9;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .thanks-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .review-data {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

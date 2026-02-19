@@ -1,0 +1,87 @@
+// Componentes
+import UserForm from "./components/UserForm.jsx";
+import ReviewForm from "./components/ReviewForm.jsx";
+import Thanks from "./components/Thanks.jsx";
+import Steps from "./components/Steps.jsx";
+
+// Hooks
+import { useForm } from "./hooks/useForm.jsx";
+import { useState } from "react";
+
+// Ícones
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { FiSend } from "react-icons/fi";
+
+// Estilização
+import "./styles/app.css";
+
+const formTemplate = {
+  name: "",
+  email: "",
+  review: "",
+  comment: "",
+};
+
+function App() {
+  // Etapa de salvar os inputs
+  const [data, setData] = useState(formTemplate);
+
+  const updateFieldHandler = (key, value) => {
+    setData((prev) => {
+      return { ...prev, [key]: value };
+    });
+  };
+
+  const formComponents = [
+    <UserForm data={data} updateFieldHandler={updateFieldHandler} />,
+    <ReviewForm data={data} updateFieldHandler={updateFieldHandler} />,
+    <Thanks data={data} updateFieldHandler={updateFieldHandler} />,
+  ];
+
+  const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } =
+    useForm(formComponents);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <h2>Deixe sua avaliação</h2>
+        <p>
+          Ficamos gratos com a sua compra, utilize este formulário para avaliar
+          o produto
+        </p>
+      </div>
+      <div className="form-container">
+        <Steps currentStep={currentStep} /> {/*Etapas*/}
+        <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
+          <div className="inputs-container">{currentComponent}</div>
+
+          <div className="actions">
+            {!isFirstStep && (
+              <button
+                type="button"
+                onClick={(e) => changeStep(currentStep - 1, e)}
+              >
+                <GrFormPrevious />
+                <span>Voltar</span>
+              </button>
+            )}
+
+            {!isLastStep ? (
+              <button type="submit">
+                <span>Avançar</span>
+                <GrFormNext />
+              </button>
+            ) : (
+              <button type="button">
+                <span>Enviar</span>
+                <FiSend />
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default App;
