@@ -32,6 +32,10 @@ function App() {
     });
   };
 
+ const handleSubmit = () => {
+    console.log("Dados enviados:", data);
+  };
+
   const formComponents = [
     <UserForm data={data} updateFieldHandler={updateFieldHandler} />,
     <ReviewForm data={data} updateFieldHandler={updateFieldHandler} />,
@@ -72,7 +76,7 @@ function App() {
                 <GrFormNext />
               </button>
             ) : (
-              <button type="button">
+              <button type="button" onClick={handleSubmit}>
                 <span>Enviar</span>
                 <FiSend />
               </button>
