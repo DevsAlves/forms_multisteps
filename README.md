@@ -6,7 +6,6 @@ Formulário de avaliação de produto dividido em múltiplas etapas (steps), con
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
@@ -60,27 +59,9 @@ npm install
 npm run dev
 ```
 
+``` 
 Acesse `http://localhost:5173` no navegador.
-
-### Outros scripts disponíveis
-
-```bash
-npm run build     # Gera a build de produção em /dist
-npm run preview   # Serve a build de produção localmente
-npm run lint      # Roda o ESLint no projeto
 ```
 
-## 🧠 Como funciona (resumo técnico)
-
-O `App.jsx` mantém um único estado `data` (nome, e-mail, avaliação, comentário) e o repassa para cada etapa via props (`data` + `updateFieldHandler`). A troca de etapa é controlada pelo hook `useForm`, que recebe o array de componentes (`formComponents`) e expõe:
-
-- `currentStep` — índice da etapa atual
-- `currentComponent` — componente a ser renderizado
-- `changeStep(i, evento)` — avança/retrocede, bloqueando índices fora do intervalo
-- `isFirstStep` / `isLastStep` — booleans usados para exibir os botões corretos
-
-Ao chegar na última etapa, o botão "Enviar" dispara `handleSubmit`, que registra os dados coletados no console (ponto de partida para integrar com uma API futuramente).
-
 ## 📄 Licença
-
-Este projeto está sob a licença MIT.
+Setup inicial Matheus Battisti
