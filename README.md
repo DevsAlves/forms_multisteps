@@ -24,10 +24,9 @@ Formulário de avaliação de produto dividido em múltiplas etapas (steps), con
 
 | Categoria       | Ferramenta |
 |-----------------|------------|
-| Biblioteca UI   | [React 19](https://react.dev/) |
-| Build tool      | [Vite 7](https://vite.dev/) |
-| Ícones          | [react-icons](https://react-icons.github.io/react-icons/) |
-| Lint            | ESLint 9 |
+| Biblioteca UI   | React |
+| Build tool      | Vite |
+| Ícones          | React Icons |
 
 ## 📁 Estrutura do projeto
 
