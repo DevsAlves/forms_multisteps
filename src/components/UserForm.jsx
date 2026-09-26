@@ -17,7 +17,7 @@ function UserForm({data, updateFieldHandler}) {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="name">E-mail:</label>
+        <label htmlFor="email">E-mail:</label>
         <input
           type="email"
           name="email"
